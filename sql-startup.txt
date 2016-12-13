@@ -1,0 +1,11 @@
+CREATE DATABASE hail_rails_development;
+
+CREATE DATABASE hail_rails_test;
+
+CREATE DATABASE hail_rails_production;
+
+GRANT ALL PRIVILEGES ON hail_rails_development.* TO 'rails_user'@'localhost' IDENTIFIED BY 'SHEAppTFsmm';
+
+GRANT ALL PRIVILEGES ON hail_rails_test.* TO 'rails_user'@'localhost' IDENTIFIED BY 'SHEAppTFsmm';
+
+GRANT ALL PRIVILEGES ON hail_rails_production.* TO 'rails_user'@'localhost' IDENTIFIED BY 'SHEAppTFsmm';

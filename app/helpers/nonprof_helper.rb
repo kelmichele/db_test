@@ -1,0 +1,2 @@
+module NonprofHelper
+end
