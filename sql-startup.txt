@@ -9,3 +9,53 @@ GRANT ALL PRIVILEGES ON hail_rails_development.* TO 'rails_user'@'localhost' IDE
 GRANT ALL PRIVILEGES ON hail_rails_test.* TO 'rails_user'@'localhost' IDENTIFIED BY 'SHEAppTFsmm';
 
 GRANT ALL PRIVILEGES ON hail_rails_production.* TO 'rails_user'@'localhost' IDENTIFIED BY 'SHEAppTFsmm';
+
+
+
+
+
+
+rails db:migrate VERSION=0
+rails db:migrate:status
+
+<!-- Useful DB commands:
+__________________
+
+SHOW DATABASES;
+
+CREATE DATABASE db_name;
+
+USE db_name;
+
+DROP DATABASE db_name; -->
+
+
+<!-- https://www.lynda.com/Ruby-Rails-tutorials/Solve-migration-problems/500551/540408-4.html?srchtrk=index%3a0%0alinktypeid%3a2%0aq%3aruby+on+rails%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2
+
+<h3>Here is some Ruby code</h3>
+<%= link_to('Hello, page 1', {:action => 'index'}) %> 
+<br>
+
+<% target = "ruby code" %>
+<%= "I said, here is some #{target}" %>
+
+<br />
+
+<% 3.times do |n| %>
+	<br /><%= n %> <br />
+<% end %>
+
+<div class="clearfix"></div><br>
+
+<% @array.each do |n| %>
+	<br />
+	<%= n %> 
+	<br />
+<% end %>
+
+<div class="clearfix"></div><br>
+
+ID: <%= @id %> <br>
+ID: <%= params[:id] %> <br>
+Page: <%= @page %> <br>
+Next Page: <%= @page.to_i + 1 %> <br> -->
