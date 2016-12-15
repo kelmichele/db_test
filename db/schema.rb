@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213220843) do
+ActiveRecord::Schema.define(version: 20161214161712) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      limit: 25
@@ -23,12 +23,27 @@ ActiveRecord::Schema.define(version: 20161213220843) do
     t.index ["username"], name: "index_admin_users_on_username", using: :btree
   end
 
+  create_table "admin_users_lawyers", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "admin_user_id"
+    t.integer "lawyer_id"
+    t.index ["admin_user_id", "lawyer_id"], name: "index_admin_users_lawyers_on_admin_user_id_and_lawyer_id", using: :btree
+  end
+
   create_table "directories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       limit: 25
     t.integer  "position"
     t.boolean  "visible",               default: false
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+  end
+
+  create_table "info_edits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "admin_user_id"
+    t.integer  "info_id"
+    t.string   "summary"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["admin_user_id", "info_id"], name: "index_info_edits_on_admin_user_id_and_info_id", using: :btree
   end
 
   create_table "infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
